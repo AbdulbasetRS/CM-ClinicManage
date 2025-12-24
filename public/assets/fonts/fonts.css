@@ -1,0 +1,53 @@
+/* Reference the local en font file */
+@font-face {
+    font-family: 'Satisfy';
+    src: url('en/Satisfy/Satisfy-Regular.ttf');
+}
+  
+.font-Satisfy {
+    font-family: 'Satisfy' !important;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('en/Manrope/Manrope-VariableFont_wght.ttf');
+}
+
+.font-Manrope {
+  font-family: 'Manrope','Kufi' !important;
+}
+
+
+
+
+/* Reference the local ar font file */
+@font-face {
+    font-family: 'Kufi';
+    src: url('ar/Noto_Kufi_Arabic/NotoKufiArabic-VariableFont_wght.ttf');
+}
+  
+  /* Use the Roboto font in the <h1> element */
+.font-Kufi {
+    font-family: 'Kufi' ,'Manrope' !important;
+}
+
+@font-face {
+  font-family: 'Amiri';
+  src: url('ar/Amiri/Amiri-Regular.ttf');
+}
+
+/* Use the Roboto font in the <h1> element */
+.font-Amiri {
+  font-family: 'Amiri','Manrope' !important;
+}
+
+/* defualt fonts */
+
+.font-Arial {
+  font-family: 'Arial', sans-serif !important;
+}
+
+
+.font-default {
+  font-family: 'Kufi' ,'Manrope' !important;
+}

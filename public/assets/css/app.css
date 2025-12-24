@@ -1,0 +1,338 @@
+body {
+    background-color: var(--app-bg) !important;
+    color: var(--app-fg) !important;
+}
+
+/* Theme variables (light as default) */
+:root {
+    --app-bg: #ffffff;
+    --app-fg: #2d3436;
+}
+
+/* Ensure navbar collapse takes available space so alignment utilities work */
+.navbar .navbar-collapse {
+    flex-grow: 1;
+}
+
+/* Light mode navbar/footer backgrounds */
+.navbar.bg-light {
+    background-color: #dfe6e9 !important;
+    color: var(--app-fg) !important;
+}
+footer,
+footer.bg-light {
+    background-color: #dfe6e9 !important;
+    color: var(--app-fg) !important;
+}
+.navbar.border-bottom {
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+footer.border-top {
+    border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Dark theme overrides */
+body.theme-dark {
+    --app-bg: #2d3436;
+    --app-fg: #dfe6e9;
+}
+
+/* Adjust some common elements in dark theme */
+body.theme-dark .navbar.bg-light {
+    background-color: #1f2426 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.theme-dark .border-top {
+    border-top-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Logo visibility rules */
+.logo-light {
+    display: inline-block;
+}
+.logo-dark {
+    display: none;
+}
+body.theme-dark .logo-light {
+    display: none !important;
+}
+body.theme-dark .logo-dark {
+    display: inline-block !important;
+}
+
+/* Theme toggle icon helpers (in case JS runs late) */
+body.theme-dark .theme-icon-dark {
+    display: inline-block !important;
+}
+body.theme-dark .theme-icon-light {
+    display: none !important;
+}
+body:not(.theme-dark) .theme-icon-dark {
+    display: none !important;
+}
+body:not(.theme-dark) .theme-icon-light {
+    display: inline-block !important;
+}
+
+/* Footer dark theme adjustments */
+body.theme-dark footer {
+    background-color: #1f2426 !important; /* slightly darker than page bg for separation */
+    color: var(--app-fg) !important;
+}
+body.theme-dark footer.bg-light {
+    /* in case bg-light is present */
+    background-color: #1f2426 !important;
+}
+body.theme-dark footer .text-muted {
+    color: rgba(223, 230, 233, 0.75) !important;
+}
+body.theme-dark footer a {
+    color: #cfd8dc;
+}
+body.theme-dark footer a:hover {
+    color: #ffffff;
+}
+/* Footer dropdown in dark theme */
+body.theme-dark footer .dropdown-menu {
+    background-color: #2b3032;
+    color: var(--app-fg);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+body.theme-dark footer .dropdown-item {
+    color: var(--app-fg);
+}
+body.theme-dark footer .dropdown-item:hover,
+body.theme-dark footer .dropdown-item:focus {
+    background-color: #3a3f41;
+    color: #ffffff;
+}
+
+/* ================= RTL OVERRIDES WHEN dir="rtl" ================= */
+[dir="rtl"] body {
+    direction: rtl;
+}
+
+/* Form inputs and floating labels */
+[dir="rtl"] .form-floating > label {
+    right: 1rem; /* match Bootstrap padding-x default in .form-control */
+    left: auto !important;
+    text-align: right;
+    transform-origin: 100% 0;
+}
+[dir="rtl"] .form-floating > .form-control::placeholder {
+    /* keep placeholder hidden like default */
+    color: transparent;
+}
+[dir="rtl"] .form-floating > .form-control:focus ~ label,
+[dir="rtl"] .form-floating > .form-control:not(:placeholder-shown) ~ label,
+[dir="rtl"] .form-floating > .form-select ~ label {
+    transform: scale(0.85) translateY(-0.5rem) translateX(-0.15rem);
+    right: 0.5rem; /* slightly inward when floated */
+}
+[dir="rtl"] .form-floating > .form-control,
+[dir="rtl"] .form-floating > .form-select,
+[dir="rtl"] input.form-control,
+[dir="rtl"] textarea.form-control {
+    text-align: right;
+}
+/* Keep LTR for technical inputs like email/URL/number */
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="url"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="number"] {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Navbar and spacing utilities fix (since we use LTR Bootstrap build) */
+[dir="rtl"] .ms-auto {
+    /* push content to the left in RTL */
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+[dir="rtl"] .me-auto {
+    /* push content to the right in RTL */
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+[dir="rtl"] .me-1 {
+    margin-left: 0.25rem !important;
+    margin-right: 0 !important;
+}
+[dir="rtl"] .me-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0 !important;
+}
+[dir="rtl"] .me-3 {
+    margin-left: 1rem !important;
+    margin-right: 0 !important;
+}
+[dir="rtl"] .ms-1 {
+    margin-right: 0.25rem !important;
+    margin-left: 0 !important;
+}
+[dir="rtl"] .ms-2 {
+    margin-right: 0.5rem !important;
+    margin-left: 0 !important;
+}
+[dir="rtl"] .ms-3 {
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+}
+
+/* Navbar layout: place brand on the right, nav items on the left, with space between */
+[dir="rtl"] .navbar .container,
+[dir="rtl"] .navbar .container-fluid {
+    display: flex;
+    flex-direction: row-reverse; /* reverse sides in RTL: brand on the right, menu on the left */
+    justify-content: space-between;
+    align-items: center;
+}
+[dir="rtl"] .navbar-brand {
+    margin-right: 0 !important;
+    margin-left: 1rem !important; /* space from toggler when reversed */
+}
+
+[dir="rtl"] .navbar .navbar-toggler {
+    margin-left: 0 !important;
+    margin-right: 0.5rem !important;
+}
+
+[dir="ltr"] .dropdown-menu-end[data-bs-popper] {
+    right: unset !important;
+}
+
+[dir="rtl"] .dropdown-item {
+    text-align: start !important;
+}
+
+[dir="rtl"] .accordion-button::after {
+    margin-left: unset !important;
+    margin-right: auto !important;
+}
+
+[dir="rtl"] .modal-header .btn-close {
+    margin-left: calc(-0.5 * var(--bs-modal-header-padding-x)) !important;
+    margin-right: auto !important;
+}
+
+/* Text alignment helpers (common cases) */
+[dir="rtl"] .text-start {
+    text-align: right !important;
+}
+[dir="rtl"] .text-end {
+    text-align: left !important;
+}
+
+/* Pagination and breadcrumb (if used) */
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+    float: right;
+}
+[dir="rtl"] .pagination {
+    direction: ltr;
+}
+
+[dir="rtl"] .dropdown-toggle::after {
+    margin-left: 0 !important;
+    margin-right: 0.255em !important; /* space from toggler when reversed */
+}
+
+/* ===================================================== */
+/* === Start: Admin Sidebar ============================ */
+/* ===================================================== */
+
+.collapse-arrow {
+    transition: transform 0.3s ease;
+}
+
+.nav-link[aria-expanded="true"] .collapse-arrow {
+    transform: rotate(180deg);
+}
+
+/* Base nav-link */
+.offcanvas .nav-link {
+    color: var(--app-fg) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    /* شوية نعومة في الحواف */
+    display: block;
+    /* عشان ياخد العرض كله */
+    margin-bottom: 3px;
+    /* المسافة بين العناصر */
+}
+
+/* Hover & Focus */
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link:focus {
+    background-color: rgba(0, 0, 0, 0.08);
+    /* خلفية خفيفة */
+    color: #000 !important;
+}
+
+/* Dark theme hover */
+body.theme-dark .offcanvas .nav-link:hover,
+body.theme-dark .offcanvas .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff !important;
+}
+
+/* Active link (لما القائمة تتفتح أو اللينك selected) */
+.offcanvas .nav-link.active,
+.offcanvas .nav-link[aria-expanded="true"] {
+    background-color: rgba(0, 123, 255, 0.2);
+    /* لون مميز */
+    color: #007bff !important;
+}
+
+/* Dark theme active */
+body.theme-dark .offcanvas .nav-link.active,
+body.theme-dark .offcanvas .nav-link[aria-expanded="true"] {
+    background-color: rgba(0, 123, 255, 0.3);
+    color: #4dabff !important;
+}
+
+.offcanvas .nav-link {
+    line-height: 1.5rem;
+    /* طول سطر ثابت */
+    padding: 0.5rem 1rem;
+    /* padding ثابت */
+}
+
+/* الافتراضي (LTR) */
+.submenu-indent {
+    margin-left: 1.5rem;
+}
+
+/* RTL */
+[dir="rtl"] .submenu-indent {
+    margin-left: 0;
+}
+
+/* 🔵 Active Parent Menu Style */
+.active-menu,
+.active-submenu {
+    color: red !important;
+    font-weight: bolder !important;
+}
+
+.active-submenu::before {
+    content: "→ ";
+    color: #d63031;
+    font-weight: bold;
+}
+
+.active-menu::before {
+    content: "→ ";
+    color: #d63031;
+    font-weight: bold;
+}
+
+[dir="rtl"] .active-submenu::before {
+    content: " ←" !important;
+}
+
+[dir="rtl"] .active-menu::before {
+    content: " ←" !important;
+}

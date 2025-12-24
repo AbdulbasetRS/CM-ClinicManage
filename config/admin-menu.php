@@ -1,0 +1,170 @@
+<?php
+
+return [
+    [
+        'order' => 1,
+        'title' => 'admin.home',
+        'icon' => 'fa fa-home',
+        'route' => 'admin.dashboard',
+        // 'permission' => 'view_dashboard',
+    ],
+    [
+        'order' => 2,
+        'title' => 'admin.management_users',
+        'icon' => 'fa-solid fa-users',
+        // 'permission' => 'management_users',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.users',
+                'icon' => 'fa-solid fa-users',
+                'route' => 'admin.users.index',
+                // 'permission' => 'view_users',
+            ],
+            [
+                'order' => 2,
+                'title' => 'admin.create_user',
+                'icon' => 'fa-solid fa-user-plus',
+                'route' => 'admin.users.create',
+                // 'permission' => 'create_user',
+            ],
+            [
+                'order' => 3,
+                'title' => 'admin.create_new_doctor',
+                'icon' => 'fa-solid fa-user-plus',
+                'route' => 'admin.users.create-doctor',
+                // 'permission' => 'create_doctor',
+            ],
+            [
+                'order' => 4,
+                'title' => 'admin.create_new_patient',
+                'icon' => 'fa-solid fa-user-plus',
+                'route' => 'admin.users.create-patient',
+                // 'permission' => 'create_patient',
+            ],
+        ],
+    ],
+    [
+        'order' => 99,
+        'title' => 'admin.profile_settings',
+        'icon' => 'fa-solid fa-user-gear',
+        'route' => 'admin.user-settings.change-password.form',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.general_settings',
+                'icon' => 'fa-solid fa-sliders',
+                'route' => 'admin.user-settings.edit',
+            ],
+            [
+                'order' => 2,
+                'title' => 'admin.change_password',
+                'icon' => 'fa-solid fa-key',
+                'route' => 'admin.user-settings.change-password.form',
+            ],
+            [
+                'order' => 3,
+                'title' => 'admin.change_avatar',
+                'icon' => 'fa-solid fa-image',
+                'route' => 'admin.user-settings.change-avatar.form',
+            ],
+            [
+                'order' => 4,
+                'title' => 'admin.two_factor_authentication',
+                'icon' => 'fa-solid fa-shield-halved',
+                'route' => 'admin.user-settings.two-factor.index',
+            ],
+        ],
+    ],
+    [
+        'order' => 4,
+        'title' => 'admin.appointments',
+        'icon' => 'fa-solid fa-calendar',
+        // 'permission' => 'manage_appointments',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.appointments',
+                'icon' => 'fa-solid fa-calendar',
+                'route' => 'admin.appointments.index',
+                // 'permission' => 'view_appointments',
+            ],
+            [
+                'order' => 2,
+                'title' => 'admin.create_appointment',
+                'icon' => 'fa-solid fa-calendar-plus',
+                'route' => 'admin.appointments.create',
+                // 'permission' => 'create_appointment',
+            ],
+        ],
+    ],
+    [
+        'order' => 5,
+        'title' => 'admin.visits',
+        'icon' => 'fa-solid fa-calendar-check',
+        'route' => 'admin.visits.index',
+        // 'permission' => 'manage_visits',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.visits',
+                'icon' => 'fa-solid fa-calendar-check',
+                'route' => 'admin.visits.index',
+                // 'permission' => 'view_visits',
+            ],
+            [
+                'order' => 2,
+                'title' => 'admin.create_visit',
+                'icon' => 'fa-solid fa-calendar-check',
+                'route' => 'admin.visits.create',
+                // 'permission' => 'create_visit',
+            ],
+            [
+                'order' => 3,
+                'title' => 'admin.statistics',
+                'icon' => 'fa-solid fa-chart-line',
+                'route' => 'admin.visits.statistics',
+                // 'permission' => 'view_visit_statistics',
+            ],
+        ],
+    ],
+    [
+        'order' => 6,
+        'title' => 'admin.invoices',
+        'icon' => 'fa-solid fa-file-invoice-dollar',
+        'route' => 'admin.invoices.index',
+        // 'permission' => 'manage_invoices',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.invoices',
+                'icon' => 'fa-solid fa-file-invoice-dollar',
+                'route' => 'admin.invoices.index',
+                // 'permission' => 'view_invoices',
+            ],
+            [
+                'order' => 2,
+                'title' => 'admin.statistics',
+                'icon' => 'fa-solid fa-chart-line',
+                'route' => 'admin.invoices.statistics',
+                // 'permission' => 'create_invoice',
+            ],
+        ],
+    ],
+    [
+        'order' => 7,
+        'title' => 'admin.services',
+        'icon' => 'fa-solid fa-syringe',
+        'route' => 'admin.services.index',
+        // 'permission' => 'manage_services',
+        'children' => [
+            [
+                'order' => 1,
+                'title' => 'admin.services',
+                'icon' => 'fa-solid fa-syringe',
+                'route' => 'admin.services.index',
+                // 'permission' => 'view_services',
+            ],
+        ],
+    ],
+];
